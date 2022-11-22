@@ -17,8 +17,8 @@ layout = [
     ],
     [
         pg.Text("Enter Language:"),
-        pg.Radio("Python","group 1"),
-        pg.Radio("Java","group 1"),
+        pg.Checkbox("Python","group 1"),
+        pg.Checkbox("Java","group 1"),
     ],
     [
         pg.Button("OK"),
@@ -38,9 +38,15 @@ while True:
         print(f"Name: {values[0]}")
         print(f"Age: {values[1]}")
         print(f"Email: {values[2]}")
-        language = "java"
-        if values[3] == True :
-            language = "Python"
-        print(f"Favourite Language: {language}")
+
+        if values[3]:
+           print("User likes Python")
+        
+        if values[4]:
+           print("User likes Java")
+
+        for item in values :
+            values[item] = None
+
 
 window.close()
